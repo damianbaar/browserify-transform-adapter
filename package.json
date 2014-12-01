@@ -1,6 +1,6 @@
 {
   "name": "browserify-transform-adapter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Re-define plugin to work as adapter for browserify transformations",
   "main": "index.js",
   "scripts": {
