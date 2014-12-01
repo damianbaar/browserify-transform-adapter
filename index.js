@@ -1,6 +1,6 @@
 var through = require('through2')
 
-module.exports = function(browserifyStream) {
+module.exports = function(browserifyStream, opts) {
   return function() {
     return through.obj(function(file, enc, next) {
       if(file.isNull() || file.stopProcessing) {
@@ -10,7 +10,7 @@ module.exports = function(browserifyStream) {
       }
 
       var self = this
-        , stream = browserifyStream(file.path)
+        , stream = browserifyStream(file.path, opts)
         , data = []
 
       stream
