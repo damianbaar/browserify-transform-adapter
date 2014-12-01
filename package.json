@@ -1,0 +1,14 @@
+{
+  "name": "browserify-transform-adapter",
+  "version": "1.0.0",
+  "description": "Re-define plugin to work as adapter for browserify transformations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Damian Baar <damian.baar@gmail.com> (http://github.com/damianbaar)",
+  "license": "MIT",
+  "dependencies": {
+    "through2": "^0.6.3"
+  }
+}
