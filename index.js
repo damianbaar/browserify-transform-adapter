@@ -1,7 +1,6 @@
 var through = require('through2')
-  , format = require('util').format
 
-module.exports = function(stream) {
+module.exports = function(browserifyStream) {
   return function(globalConfig) {
     return through.obj(function(file, enc, next) {
       if(file.isNull() || file.stopProcessing) {
@@ -14,10 +13,10 @@ module.exports = function(stream) {
         , stream = through()
         , data = []
 
-      stream.pipe(stream)
-            .pipe(through(function(chunk, enc, next) {
+      stream.pipe(browserifyStream())
+            .pipe(through(function(chunk, enc, cb) {
               data.push(chunk)
-              next()
+              cb()
             }, function() {
               var _content = data.join('')
               file.contents = new Buffer(_content)
