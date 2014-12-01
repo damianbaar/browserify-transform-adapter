@@ -1,7 +1,7 @@
 var through = require('through2')
 
 module.exports = function(browserifyStream) {
-  return function(globalConfig) {
+  return function() {
     return through.obj(function(file, enc, next) {
       if(file.isNull() || file.stopProcessing) {
         this.push(file)
